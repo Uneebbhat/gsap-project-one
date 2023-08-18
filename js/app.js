@@ -49,6 +49,7 @@ gsap.to(".image__section img", {
     // markers: true,
     start: "top 10%",
     // end: "bottom 0%",
+    // end: "bottom 0%",
     pin: true,
     scrub: 2,
   },

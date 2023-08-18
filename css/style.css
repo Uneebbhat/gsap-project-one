@@ -49,8 +49,7 @@ a {
 }
 .main h1 {
   font-size: 4rem;
-  max-width: 100%;
-  width: 900px;
+  max-width: 900px;
 }
 
 .moving__text-section {
@@ -58,13 +57,13 @@ a {
   overflow: hidden;
 }
 .moving__text-section .moving__text-wrapper .moving__text-first {
-  font-size: 6rem;
+  font-size: clamp(1rem, 10vw, 6rem);
   white-space: nowrap;
   margin: 0;
   transform: translateX(150%);
 }
 .moving__text-section .moving__text-wrapper .moving__text-second {
-  font-size: 6rem;
+  font-size: clamp(1rem, 10vw, 6rem);
   white-space: nowrap;
   margin: 0;
   transform: translateX(-150%);
@@ -75,10 +74,43 @@ a {
   padding: 50px 0;
   margin: 180px 0;
 }
+.image__section img {
+  max-width: 100%;
+}
 
 .footer {
   font-size: 2rem;
   margin-top: 180px;
   padding: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+  .header {
+    padding: 0 20px;
+  }
+  .header .navbar {
+    display: none;
+  }
+  .main h1 {
+    font-size: 3rem;
+    max-width: 100vw;
+    text-wrap: balance;
+  }
+}
+@media screen and (max-width: 320px) {
+  .main h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .moving__text-section {
+    padding: 100px 0;
+  }
+  .moving__text-section .moving__text-wrapper .moving__text-first {
+    transform: translateX(100%);
+  }
+  .moving__text-section .moving__text-wrapper .moving__text-second {
+    transform: translateX(-200%);
+  }
 }/*# sourceMappingURL=style.css.map */

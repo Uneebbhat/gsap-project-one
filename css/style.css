@@ -50,6 +50,12 @@ a {
 .main h1 {
   font-size: 4rem;
   max-width: 900px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.main .char {
+  transform: translateY(200px);
+  transition: transform 0.5s;
 }
 
 .moving__text-section {
@@ -57,13 +63,19 @@ a {
   overflow: hidden;
 }
 .moving__text-section .moving__text-wrapper .moving__text-first {
-  font-size: clamp(1rem, 10vw, 6rem);
+  font-size: clamp(1rem, 10vw, 8rem);
   white-space: nowrap;
   margin: 0;
   transform: translateX(150%);
+  color: #f5f5f5;
+  -webkit-text-stroke: 3px black;
+  transition: all 0.3s ease;
+}
+.moving__text-section .moving__text-wrapper .moving__text-first:hover {
+  color: black;
 }
 .moving__text-section .moving__text-wrapper .moving__text-second {
-  font-size: clamp(1rem, 10vw, 6rem);
+  font-size: clamp(1rem, 10vw, 8rem);
   white-space: nowrap;
   margin: 0;
   transform: translateX(-150%);
@@ -73,9 +85,13 @@ a {
   text-align: center;
   padding: 50px 0;
   margin: 180px 0;
+  max-width: 30%;
+  overflow: hidden;
+  margin: 0 auto;
+  transform-origin: center center; /* Set transform origin to center */
 }
-.image__section img {
-  max-width: 100%;
+.image__section .image__section img {
+  transform-origin: center center; /* Set transform origin to center */
 }
 
 .footer {

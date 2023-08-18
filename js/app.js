@@ -1,45 +1,41 @@
 window.addEventListener("load", function () {
-  // Animation code here
-
   gsap.from(".header", {
     y: -100,
     duration: 1,
     ease: "none",
   });
 
-  gsap.from(".main__first-text", {
-    opacity: 0,
-    ease: "linear",
-    delay: 1.5,
-  });
+  //   gsap.from(".main__first-text", {
+  //     opacity: 0,
+  //     ease: "linear",
+  //     delay: 1.5,
+  //   });
 
-  gsap.from(".main__second-text", {
-    opacity: 0,
-    ease: "linear",
-    delay: 2,
-  });
-
-  gsap.registerPlugin("ScrollTrigger");
+  //   gsap.from(".main__second-text", {
+  //     opacity: 0,
+  //     ease: "linear",
+  //     delay: 2,
+  //   });
 
   // Check screen width
   const screenWidth = window.innerWidth || document.documentElement.clientWidth;
 
   // Define xPercent based on screen width
-  let xPercentValueOne = -150;
+  let xPercentValueOne = -200;
   if (screenWidth < 560) {
     xPercentValueOne = -250; // Change the value for smaller screens
   }
 
-  let xPercentValueTwo = 160;
+  let xPercentValueTwo = 170;
   if (screenWidth < 560) {
     xPercentValueTwo = 250; // Change the value for smaller screens
   }
 
-  gsap.registerPlugin("ScrollTrigger");
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.to(".moving__text-first", {
     scrollTrigger: {
       trigger: ".moving__text-first",
-      // markers: true,
       start: "top 80%",
       end: "bottom 0%",
       scrub: 2,
@@ -47,11 +43,9 @@ window.addEventListener("load", function () {
     xPercent: xPercentValueOne,
   });
 
-  // Apply ScrollTrigger animation with xPercent based on screen width
   gsap.to(".moving__text-second", {
     scrollTrigger: {
       trigger: ".moving__text-second",
-      // markers: true,
       start: "top 90%",
       end: "bottom 0%",
       scrub: 2,
@@ -59,16 +53,36 @@ window.addEventListener("load", function () {
     xPercent: xPercentValueTwo,
   });
 
-  gsap.registerPlugin("ScrollTrigger");
   gsap.to(".image__section img", {
     scrollTrigger: {
       trigger: ".image__section img",
-      // markers: true,
       start: "top 10%",
-      // end: "bottom 0%",
       pin: true,
       scrub: 2,
     },
     scale: 1.7,
+    ease: "none",
   });
+
+  gsap.to(".image__section", {
+    scrollTrigger: {
+      trigger: ".image__section",
+      start: "top 60%",
+      end: "bottom 100%",
+      markers: true,
+      scrub: 2,
+      //   pin: true,
+    },
+    // scale: 1.7,
+    maxWidth: "100%",
+  });
+});
+
+const firstText = new SplitType(".main__first-text");
+const secondText = new SplitType(".main__second-text");
+
+gsap.to(".char", {
+  y: 0,
+  stagger: 0.05,
+  delay: 1,
 });

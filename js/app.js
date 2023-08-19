@@ -58,7 +58,7 @@ window.addEventListener("load", function () {
       trigger: ".image__section",
       start: "top 30%",
       end: "bottom 20%", // Adjust the end point to stop at the center
-      //   markers: true,
+      markers: true,
       scrub: 2,
     },
     width: "100%",

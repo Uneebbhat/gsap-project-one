@@ -15,6 +15,25 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners of the thumb */
+}
+
+/* Customize the scrollbar track when it's hovered */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a4a4a4; /* Color when hovered */
+}
+
+/* Customize the scrollbar when it's in its inactive state (not being interacted with) */
+::-webkit-scrollbar-thumb:inactive {
+  background-color: #c4c4c4; /* Color in inactive state */
+}
+
 // Utility styling
 .flex {
   display: flex;
@@ -131,7 +150,8 @@ a {
   overflow: hidden;
   position: relative; /* Add position property */
   transform-origin: center center;
-  object-fit: cover; /* Set transform origin to center */
+  object-fit: cover;
+  object-position: center; /* Set transform origin to center */
 
   /* Remove duplicate margin property */
   /* margin: 0 auto; */

@@ -94,15 +94,17 @@ a {
   padding: 50px 0;
   margin: 180px 0;
   height: 500px;
-  width: 20%;
   overflow: hidden;
-  margin: 0 auto;
+  position: relative; /* Add position property */
   transform-origin: center center;
   -o-object-fit: cover;
      object-fit: cover; /* Set transform origin to center */
+  /* Remove duplicate margin property */
+  /* margin: 0 auto; */
 }
 .image__section .image__section img {
   transform-origin: center center; /* Set transform origin to center */
+  max-width: 100%;
 }
 
 .footer {

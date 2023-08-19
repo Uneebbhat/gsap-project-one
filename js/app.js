@@ -44,24 +44,23 @@ window.addEventListener("load", function () {
   gsap.to(".image__section img", {
     scrollTrigger: {
       trigger: ".image__section img",
-      start: "top 10%",
-      pin: true,
-      end: "top 70%",
+      start: "top center",
+      //   pin: true,
+      end: "center center", // Set the end point to the center of the element
       scrub: 2,
     },
-    scale: 1.5,
+    scale: 1.8,
     ease: "none",
   });
 
   gsap.to(".image__section", {
     scrollTrigger: {
       trigger: ".image__section",
-      start: "top 20%",
-      end: "bottom 100%",
+      start: "top 30%",
+      end: "bottom 20%", // Adjust the end point to stop at the center
       markers: true,
       scrub: 2,
     },
-    // scale: 1.7,
     width: "100%",
   });
 });

@@ -57,8 +57,8 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: ".image__section",
       start: "top 20%",
-      end: "bottom 90%",
-      //   markers: true,
+      end: "bottom 100%",
+      markers: true,
       scrub: 2,
     },
     // scale: 1.7,

@@ -5,28 +5,16 @@ window.addEventListener("load", function () {
     ease: "none",
   });
 
-  //   gsap.from(".main__first-text", {
-  //     opacity: 0,
-  //     ease: "linear",
-  //     delay: 1.5,
-  //   });
-
-  //   gsap.from(".main__second-text", {
-  //     opacity: 0,
-  //     ease: "linear",
-  //     delay: 2,
-  //   });
-
   // Check screen width
   const screenWidth = window.innerWidth || document.documentElement.clientWidth;
 
   // Define xPercent based on screen width
-  let xPercentValueOne = -200;
+  let xPercentValueOne = -300;
   if (screenWidth < 560) {
     xPercentValueOne = -250; // Change the value for smaller screens
   }
 
-  let xPercentValueTwo = 170;
+  let xPercentValueTwo = 240;
   if (screenWidth < 560) {
     xPercentValueTwo = 250; // Change the value for smaller screens
   }
@@ -58,23 +46,23 @@ window.addEventListener("load", function () {
       trigger: ".image__section img",
       start: "top 10%",
       pin: true,
+      end: "top 70%",
       scrub: 2,
     },
-    scale: 1.7,
+    scale: 1.5,
     ease: "none",
   });
 
   gsap.to(".image__section", {
     scrollTrigger: {
       trigger: ".image__section",
-      start: "top 60%",
-      end: "bottom 100%",
-      markers: true,
+      start: "top 20%",
+      end: "bottom 90%",
+      //   markers: true,
       scrub: 2,
-      //   pin: true,
     },
     // scale: 1.7,
-    maxWidth: "100%",
+    width: "100%",
   });
 });
 
@@ -85,4 +73,11 @@ gsap.to(".char", {
   y: 0,
   stagger: 0.05,
   delay: 1,
+});
+
+const cursor = document.querySelector(".circle");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
 });

@@ -40,6 +40,9 @@ a {
 .header .navbar .nav__links ul li {
   padding: 0 20px;
 }
+.header .navbar .nav__links ul li li:hover ~ .circle {
+  transform: scale(2);
+}
 
 .main {
   height: 80vh;
@@ -66,7 +69,7 @@ a {
   font-size: clamp(1rem, 10vw, 8rem);
   white-space: nowrap;
   margin: 0;
-  transform: translateX(150%);
+  transform: translateX(170%);
   color: #f5f5f5;
   -webkit-text-stroke: 3px black;
   transition: all 0.3s ease;
@@ -78,17 +81,20 @@ a {
   font-size: clamp(1rem, 10vw, 8rem);
   white-space: nowrap;
   margin: 0;
-  transform: translateX(-150%);
+  transform: translateX(-200%);
 }
 
 .image__section {
   text-align: center;
   padding: 50px 0;
   margin: 180px 0;
-  max-width: 30%;
+  height: 60%;
+  width: 20%;
   overflow: hidden;
   margin: 0 auto;
-  transform-origin: center center; /* Set transform origin to center */
+  transform-origin: center center;
+  -o-object-fit: cover;
+     object-fit: cover; /* Set transform origin to center */
 }
 .image__section .image__section img {
   transform-origin: center center; /* Set transform origin to center */

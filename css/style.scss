@@ -112,6 +112,11 @@ a {
       white-space: nowrap;
       margin: 0;
       transform: translateX(-200%);
+      transition: all 0.3s ease;
+      &:hover {
+        color: #f5f5f5;
+        -webkit-text-stroke: 3px black;
+      }
     }
   }
 }
